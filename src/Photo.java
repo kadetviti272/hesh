@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Photo {
     String aligment;
@@ -9,7 +10,6 @@ public class Photo {
 
     public Photo(){
         tegs = new ArrayList<String>();
-
     }
 
     public int getIndex_photo() {
@@ -44,4 +44,23 @@ public class Photo {
     }
 
 
+    public List<String> getTegs() {
+        return tegs;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Photo photo = (Photo) o;
+        return count_of_tegs == photo.count_of_tegs &&
+                index_photo == photo.index_photo &&
+                Objects.equals(aligment, photo.aligment) &&
+                Objects.equals(tegs, photo.tegs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(aligment, tegs, count_of_tegs, index_photo);
+    }
 }
