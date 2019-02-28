@@ -19,7 +19,6 @@ public class Slide {
                          slide.add(list.get(i));
                      }
                  }
-
              }
              count++;
          }
