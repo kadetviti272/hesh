@@ -31,6 +31,7 @@ public class Main {
                 temp.tegs.add(photo[i]);
 
         }
+        temp.setIndex_photo(res.size());
         res.add(temp);
 
 
