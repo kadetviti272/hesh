@@ -17,6 +17,16 @@ public class Slide {
         return tags_of_slide;
     }
 
+    public static  int Max;
+    public boolean isRightCheak;
+    public boolean isLeftCheak;
+    public int indexMax;
+    public int[] rightCheakIndex;
+    List<Photo> slide;
+    List<String> tags_of_slide;
+    int rightIndex;
+    int leftIndex;
+
     public void setTags_of_slide(List<String> tags_of_slide) {
         this.tags_of_slide = tags_of_slide;
     }
@@ -77,6 +87,22 @@ public class Slide {
                 continue;
             }
             return tempSlaid;
+        }
+
+
+        public int getTagCount() {
+            return tags_of_slide.size();
+        }
+
+        public String GetTag(int index) {
+            return tags_of_slide.get(index);
+        }
+
+        public boolean getTagContaints(String s) {
+            for (int i = 0 ; i<tags_of_slide.size();i++)
+                if(tags_of_slide.get(i).equals(s))
+                    return true;
+            return false;
         }
     }
 }
